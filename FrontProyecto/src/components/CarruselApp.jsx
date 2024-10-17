@@ -1,29 +1,33 @@
 import React from 'react'
+import { destacadosList } from '../data/destacadosList'
 import imgDefault from '../assets/imgDefault.jpg'
 
 const CarruselApp = () => {
   return (
     <div>
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img src={imgDefault} class="d-block w-100" alt="imagen"/>
+        <div id="carouselExampleDark" className="carousel carousel-dark slide">
+        
+        <div className="carousel-inner">
+
+            {destacadosList.map((destacado, index) => (
+                <div key={index} className="carousel-item active" data-bs-interval="10000">
+                    <img src={destacado.url} alt="imagen" />
+                    <section>
+                        <h5>{destacado.name}</h5>
+                        <h6>{destacado.precio}</h6>
+                    </section>
                 </div>
-                <div class="carousel-item">
-                <img src={imgDefault} class="d-block w-100" alt="imagen"/>
-                </div>
-                <div class="carousel-item">
-                <img src={imgDefault} class="d-block w-100" alt="imagen"/>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            ))}
+            
+        </div>
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+        </button>
         </div>
     </div>
   )

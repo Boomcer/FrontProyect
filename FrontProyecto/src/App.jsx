@@ -1,4 +1,4 @@
-import CarruselApp from './components/CarruselApp'
+import CarruselApp from './components/CarruselApp';
 import './App.css'
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-    <div className='col vw-100'>
+    <div className='col'>
       <div className='row'>
 
       </div>
