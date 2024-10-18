@@ -14,6 +14,6 @@ export const productos = [
     { nombre: 'Producto 13', precio: '$1900' },
     { nombre: 'Producto 14', precio: '$1900' },
     { nombre: 'Producto 15', precio: '$1900' },
-    { nombre: 'Producto 10', precio: '$1900' },
-    { nombre: 'Producto 10', precio: '$1900' },
+    { nombre: 'Producto 16', precio: '$1900' },
+    { nombre: 'Producto 17', precio: '$1900' },
   ];

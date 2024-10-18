@@ -11,13 +11,14 @@ const CarruselApp = () => {
 
             {destacadosList.map((destacado, index) => (
                 <div key={index} className={`carousel-item ${index === 0 ? 'active': ""}`}
-                data-bs-interval="10000">
+                data-bs-interval="10000"
+                style={{minHeight: '300px'}}>
                     <div className="row d-flex alig-items-center ">
                         <section className='col-6'>
                             <img src={destacado.url}
                             alt="imagen" 
                             className='img-fluid'
-                            style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
+                            style={{ objectFit: 'cover', width: 'auto', height: '300px' }}
                             />
                         </section>
                         <section className='col-6 align-self-center'>
