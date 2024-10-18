@@ -1,4 +1,5 @@
 import CarruselApp from './components/CarruselApp';
+import GridProductsApp from './components/GridProductsApp';
 import './App.css'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <div className='row'>
         <div className='container'>
           <CarruselApp/>
+          <GridProductsApp/>
 
         </div>
       </div>
