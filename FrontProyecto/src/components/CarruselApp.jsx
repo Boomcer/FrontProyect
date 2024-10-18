@@ -10,12 +10,22 @@ const CarruselApp = () => {
         <div className="carousel-inner">
 
             {destacadosList.map((destacado, index) => (
-                <div key={index} className="carousel-item active" data-bs-interval="10000">
-                    <img src={destacado.url} alt="imagen" />
-                    <section>
-                        <h5>{destacado.name}</h5>
-                        <h6>{destacado.precio}</h6>
-                    </section>
+                <div key={index} className={`carousel-item ${index === 0 ? 'active': ""}`}
+                data-bs-interval="10000">
+                    <div className="row d-flex alig-items-center ">
+                        <section className='col-6'>
+                            <img src={destacado.url}
+                            alt="imagen" 
+                            className='img-fluid'
+                            style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
+                            />
+                        </section>
+                        <section className='col-6 align-self-center'>
+                            <h3>{destacado.name}</h3>
+                            <h2>{destacado.precio}</h2>
+                        </section>
+
+                    </div>
                 </div>
             ))}
             
