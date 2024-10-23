@@ -2,9 +2,10 @@ import React from 'react'
 import CarsProductApp from '../components/CardsProductApp'
 
 
+
 const HomeScreen = () => {
   return (
-    <CarsProductApp />
+    <CarsProductApp/>
   )
 }
 
