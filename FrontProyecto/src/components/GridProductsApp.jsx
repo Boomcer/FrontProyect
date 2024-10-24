@@ -13,7 +13,7 @@ const GridProductsApp = () => {
                     <div className="card-body">
                         <h5 className="card-title">{producto.nombre}</h5>
                         <p className="card-text">{producto.precio}</p>
-                        <a href="#" className="btn btn-primary">Comprar</a>
+                        <a className="btn btn-primary" to= "/">Comprar</a>
                     </div>
                 </div>
             </div>

@@ -17,10 +17,13 @@ function App() {
           <section className='my-5'>
             <CarruselApp/>
           </section>
-          <section className='container'>
-            <GridProductsApp/>
-          </section>
-          <section className='container w-75'>
+
+            <section className='container'>
+              <GridProductsApp/>
+            </section>
+
+
+          <section className='container w-100'>
             <PublicidadApp/>
           </section>
 
