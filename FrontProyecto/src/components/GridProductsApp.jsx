@@ -1,6 +1,7 @@
 import React from 'react'
 import { productos } from '../data/productosList'
 import imgDefault from '../assets/imgDefault.jpg';
+import { Link } from 'react-router-dom';
 
 const GridProductsApp = () => {
   return (
@@ -13,7 +14,7 @@ const GridProductsApp = () => {
                     <div className="card-body">
                         <h5 className="card-title">{producto.nombre}</h5>
                         <p className="card-text">{producto.precio}</p>
-                        <a className="btn btn-primary" to= "/">Comprar</a>
+                        <Link className="btn btn-primary" to= "/product">Comprar</Link>
                     </div>
                 </div>
             </div>

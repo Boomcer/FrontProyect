@@ -1,41 +1,18 @@
-import CarruselApp from './components/CarruselApp';
-import GridProductsApp from './components/GridProductsApp'
-import PublicidadApp from './components/PublicidadApp';
-import './App.css'
+import { BrowserRouter,Routes,Route } from "react-router-dom"
+import Product from '../src/views/ProductScreen'
+import Home from '../src/views/HomeScreen'
 
 function App() {
   
 
   return (
-    <>
-    <div className='col d-flex align-items-center'>
-      <div className='row'>
-
-      </div>
-      <div className='row'>
-        <div className='container'>
-          <section className='my-5'>
-            <CarruselApp/>
-          </section>
-
-            <section className='container'>
-              <GridProductsApp/>
-            </section>
-
-
-          <section className='container w-100'>
-            <PublicidadApp/>
-          </section>
-
-        </div>
-      </div>
-
-      <div className='row'>
-
-      </div>
-
-    </div>
-    </>
+    <BrowserRouter>
+      <div className="w-100"></div>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/Product" element={<Product/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
