@@ -24,7 +24,7 @@ const firstIndex = lastIndex - productsPerPage
         .catch ((error) => console.error(error));
     };
     return(
-        <div className="container  p-3">
+        <div className="container  p-3 bg-secondary h-50">
             <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
                 {productos.map ((item) => ( 
                 <CardProductApp 

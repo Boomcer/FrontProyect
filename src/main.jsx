@@ -6,6 +6,5 @@ import './index.css'
 import HomeScreen from './views/HomeScreen.jsx'
 
 createRoot(document.getElementById('root')).render(
- 
    <HomeScreen />
 )

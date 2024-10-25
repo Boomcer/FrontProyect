@@ -1,11 +1,12 @@
 import { useState } from 'react'
+import HomeScreen from './views/HomeScreen'
 
 
 function App() {
-const texto = "Hola Mundo";
+
 
   return 
-        <p>{texto}</p>;
+      <HomeScreen />
 }
 
 export default App
