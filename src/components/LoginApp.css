@@ -1,0 +1,27 @@
+#contenedor-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+    margin: 0;
+  }
+  
+  .ventana-modal {
+    width: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #b9aeae;
+    padding: 5% 5%;
+  }
+  
+  .contenido-modal {
+    text-align: center;
+  }
+  
+  button {
+   
+    font-size: 16px;
+    cursor: pointer;
+  }
