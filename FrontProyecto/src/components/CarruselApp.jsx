@@ -13,17 +13,18 @@ const CarruselApp = () => {
                 <div key={index} className={`carousel-item ${index === 0 ? 'active': ""}`}
                 data-bs-interval="10000"
                 style={{minHeight: '300px'}}>
-                    <div className="row d-flex alig-items-center ">
-                        <section className='col-6'>
+                    <div className="row d-flex alig-items-center  justify-content-center">
+                        <section className='col-5 d-flex align-self-center'
+                        style={{justifyContent: 'center'}}>
                             <img src={destacado.url}
                             alt="imagen" 
                             className='img-fluid'
                             style={{ objectFit: 'cover', width: 'auto', height: '300px' }}
                             />
                         </section>
-                        <section className='col-6 align-self-center'>
+                        <section className='col-5 d-flex align-self-center'
+                         style={{justifyContent: 'center'}}>
                             <h3>{destacado.name}</h3>
-                            <h2>{destacado.precio}</h2>
                         </section>
 
                     </div>

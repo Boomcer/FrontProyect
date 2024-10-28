@@ -7,32 +7,29 @@ function App() {
 
   return (
     <>
-    <div className='col d-flex align-items-center'>
-      <div className='row'>
+    <div className='container-fluid vw-100'>
 
-      </div>
-      <div className='row'>
-        <div className='container'>
-          <section className='my-5'>
-            <CarruselApp/>
-          </section>
-
-            <section className='container'>
-              <GridProductsApp/>
+      <div className='col d-flex align-items-center justify-content-center'>
+        
+        <div className='row'>
+          <div className='container'>
+            <section className='my-5'>
+              <CarruselApp/>
             </section>
 
+              <section className='container'>
+                <GridProductsApp/>
+              </section>
 
-          <section className='container w-100'>
-            <PublicidadApp/>
-          </section>
 
+            <section className='container w-100'>
+              <PublicidadApp/>
+            </section>
+
+          </div>
         </div>
-      </div>
-
-      <div className='row'>
 
       </div>
-
     </div>
     </>
   )

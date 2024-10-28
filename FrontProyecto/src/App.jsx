@@ -7,7 +7,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="w-100"></div>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/Product" element={<Product/>}/>
