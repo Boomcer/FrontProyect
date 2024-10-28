@@ -7,11 +7,7 @@ function App() {
 
   return (
     <>
-    <div className='col d-flex align-items-center'>
-      <div className='row'>
-
-      </div>
-      <div className='row'>
+      <div className='col d-flex align-items-center'>
         <div className='container'>
           <section className='my-5'>
             <CarruselApp/>
@@ -28,12 +24,6 @@ function App() {
 
         </div>
       </div>
-
-      <div className='row'>
-
-      </div>
-
-    </div>
     </>
   )
 }
