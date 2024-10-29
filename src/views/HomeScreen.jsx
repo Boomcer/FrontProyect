@@ -1,12 +1,10 @@
 import React from 'react'
-import LoginApp from '../components/LoginApp'
 
-
-
-const HomeScreen = () => {
+const HomeScreen =()=>{
+  
   return (
-    <LoginApp />
-  )
-}
+  <div>Home</div>
+  );    
+};
 
-export default HomeScreen
+export default HomeScreen;
