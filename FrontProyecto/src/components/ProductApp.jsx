@@ -15,7 +15,7 @@
     return (
       <div>
         <div className='align-items-center justify-content-center'>
-        <p className='mt-2 ms-5 title'>
+        <p className='title'>
           {producto.title}
         </p>
         <section className=' center-content'>
