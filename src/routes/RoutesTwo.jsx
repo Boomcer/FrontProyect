@@ -6,7 +6,7 @@ import NosotrosScreen from '../views/NosotrosScreen';
 import ErrorScreen from "../views/ErrorScreen"
 import MenuApp from '../components/MenuApp';
 import ProtectedRoutes from './ProtectedRoutes';
-import ProductScreen from '../views/ProductScreen';
+import CarritoScreen from '../views/CarritoScreen';
 
 const RoutesTwo = ()=>{
 
@@ -15,8 +15,8 @@ const RoutesTwo = ()=>{
     <MenuApp />
     <Routes>
       <Route path="/" element={<HomeScreen/>}/>
-      <Route path='/nosotros' element={<NosotrosScreen/>}/>
-      <Route path='/product/:id' element={<ProductScreen/>}/>
+      <Route path="/nosotros" element={<NosotrosScreen/>}/>
+      <Route path="/carrito" element={<CarritoScreen/>}/>      
       <Route 
         path="/admin" 
         element= {

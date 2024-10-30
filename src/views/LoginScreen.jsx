@@ -1,124 +1,92 @@
-import React,{useState, useEffect} from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import { auth } from "../helpers/fetchApi"
+import '../css/LoginScreen.css';
 
-const LoginApp = () => {
-    
-    const [isLoginOpen, setLoginOpen] = useState(true);
-        
-    const {
-            register, 
-            handleSubmit, 
-            formState:{errors}
-            } = useForm();
-   
+const LoginScreen = () => {
+
     const navigate = useNavigate();
+    const [message, setMessage] = useState(null);
+    const [formulario, setFormulario] = useState({
+      email: "",
+      password: "",
+    });
 
-    //const openModal = ()=>{
-     //   setLoginOpen(true);
-    //};
-    const closeModal = ()=>{
-        setLoginOpen(close);
+    const handleChange = (e) =>{
+      setFormulario({...formulario, [e.target.name]: e.target.value});
     };
-
-    const user = {
-      correo: "user@user.com",
-      pass: "user12345678",
-      role: "user",
-    };
-    const admin = {
-      correo: "admin@admin.com",
-      pass: "admin12345678",
-      role: "admin",
-    };
+    
   
-  
-    const logIn = (data,e) => {
-    //e.preventDefault();
-     const {correo, pass} = data;
-      
-     if (correo === user.correo && pass === user.pass) {
-       localStorage.setItem("auth", JSON.stringify(user.role));
-       navigate("/");
-      } else if (correo === admin.correo && pass === admin.pass) {
-        localStorage.setItem("auth", JSON.stringify(admin.role));
-        navigate("/admin");
-      } else {
-        alert("Correo o contraseña incorrectos");
-        setCorreo('')
-        setPass('')
-        e.target[0].focus();
+    const login = (e) => {
+    e.preventDefault();
+     auth(formulario.email, formulario.password).then((response) => {
+      if (response?.token) {
+        localStorage.setItem("token", JSON.stringify(response.token));
+        localStorage.setItem("uid", JSON.stringify(response.uid));
+        navigate("/");
+      }else {
+        setMessage(response);
       }
- };
-
-
+     });  
+    };
+  
     return (
-        
-        <div className="container vh-100">
-            {isLoginOpen && (
-        <div className="row h-100  justify-content-center align-items-center">
-        <div className="col-12 col-md-6">
-          <div className="card">
+        <div className="container">
+        <div className="row justify-content-center align-items-center">
+        <div className="col">
+          <div className="card img-card">
+            <img 
+              src="" 
+              alt="inicio"
+              className="card-img-top"
+            />
             <div className="card-body">
-              <h5 className="card-title">Inicio de sesión</h5>
+              <h3 className="card-title mb-3 text-center">Iniciar Sesión</h3>
               
-              <form onSubmit={handleSubmit(logIn)}>
-                <div className="mb-3">
+              <form onSubmit={login}>
+                
+                <div className="col">
                   <label className="form-label">Correo</label>
                   <input
+                  className="form-control"
                     type="email"
-                    className={
-                      errors.correo?.type === "required"
-                        ? "form-control bg-danger"
-                        : "form-control"
-                    }
+                    value={formulario.email}
+                    onChange={handleChange}
+                    name="email"
                     placeholder="name@example.com"
-                    {...register("correo", {
-                      required: true,
-                    })}
+                    required={true}
                   />
-                  {errors.correo?.type === "required" && (
-                    <p className="text-danger">Correo obligatorio</p>
-                  )}
-                  {errors.correo?.type === "pattern" && (
-                    <p className="text-danger">
-                      No es un formato válido de correo
-                    </p>
-                  )}
                 </div>
-                <div className="mb-3">
+                
+                <div className="col">
                   <label className="form-label">Contraseña</label>
                   <input
-                    {...register("pass", {
-                      required: true,
-                      pattern: /^(?=.*[a-z])(?=.*\d)[a-z\d]{8,16}$/,
-                    })}
                     type="password"
                     className="form-control"
+                    value={formulario.password}
+                    onChange={handleChange}
+                    name="password"
+                    required={true}
                   />
-                  {errors.pass?.type === "required" && (
-                    <p className="text-danger">Contraseña obligatoria</p>
-                  )}
-                  {errors.pass?.type === "pattern" && (
-                    <p className="text-danger">
-                      Debe tener solo minúsculas y números. Mínimo 8 caracteres
-                      máximo 16 caracteres.
-                    </p>
-                  )}
                 </div>
-                <div className="d-flex justify-content-end">
-                  <button className="btn btn-success">Iniciar</button>
-                </div>
-              </form>
 
+                <div className="d-grid my-3">
+                  <button className="btn btn-warning">Iniciar</button>
+                </div>
+
+            </form>
             </div>
+            {message && (
+              <div className="alert alert-danger mt-2" role="alert">
+                  {message.msg}
+              </div>
+            )}
           </div>
         </div>
       </div>
-
-        )}
     </div>
-  )
-}
+  );
+};
 
-export default LoginApp
+
+export default LoginScreen
