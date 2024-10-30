@@ -13,9 +13,9 @@ function App() {
             <CarruselApp/>
           </section>
 
-            <section className='container'>
-              <GridProductsApp/>
-            </section>
+          <section className='container'>
+            <GridProductsApp/>
+          </section>
 
 
           <section className='container w-100'>

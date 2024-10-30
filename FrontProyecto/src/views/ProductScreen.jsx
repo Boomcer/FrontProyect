@@ -1,46 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import imgDefault from '../assets/imgDefault.jpg'
-import { useState } from 'react';
+import { getProduct } from '../helpers/ApiFetch';
+import ProductApp from '../components/ProductApp';
+import { useParams } from 'react-router-dom';
 
 const ProductScreen = () => {
 
-  const [favorito, setFavorito] = useState(false);
+  const {id} = useParams()
+  const [producto, setProducto] = useState(null);
+  const [loading, setLoading] = useState(true)
 
-  const toggleFavorito = () =>{
-    setFavorito(!favorito)
+  useEffect(() => {
+    traerProducto();
+  },[]);
+
+  const traerProducto = () =>{
+    getProduct(id)
+      .then((response) => {setProducto(response)})
+      .catch((error) => {console.log(error)});
+      setLoading(false);
   }
 
   return (
-    <div className='container-fluid vw-100'>
-      <div className='row d-flex align-items-center justify-content-center'>
-        <section className='col-6 d-flex' style={{justifyContent: 'center'}}>
-          <img src={imgDefault} alt="imagen" />
-          <button onClick={toggleFavorito} style={{ border: 'none', background: 'none', cursor: 'pointer', alignSelf: 'flex-start' }}>
-              {favorito ? (
-                <i className="bi bi-heart-fill" style={{ fontSize: '2rem', color: 'aqua' }}></i>
-              ) : (
-                <i className="bi bi-heart" style={{ fontSize: '2rem', color: 'aqua' }}></i>
-              )}
-            </button>
-        </section>
-        <section className='col-5 text-center'>
-          <div>
-            <h1>Nombre producto</h1>
-            <h2>Precio</h2>
+    <div className='vw-100'>
+      {loading &&(
+        <div className='row mt-5'>
+          <div className='col'>
+            <h3>Cargando...</h3>
           </div>
-          <div>
-            <div className='row mx-5 gap-3'>
-              <button className='btn btn-primary'>Comprar ahora</button>
-              <button className='btn btn-primary'>Agregar al carrito</button>
-            </div>
-          </div>
-        </section>
-        <section className='row mx-5 px-5'>
-              <h2>Descripcion</h2>
-              <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio odio earum, ducimus eos molestiae autem ea impedit doloremque praesentium explicabo debitis totam aliquam doloribus pariatur non nulla libero nostrum cupiditate?</h4>
-        </section>
+        </div>
+      )}
+      <div>
+        {
+          producto && (
+            <ProductApp producto={producto}/>
+          )
+        }
       </div>
-
     </div>
   );
 }
