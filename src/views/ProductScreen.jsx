@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ProductoScreen = () => {
+const ProductScreen = (producto) => {
   return (
     <div>ProductoScreen</div>
   )
 }
 
-export default ProductoScreen
+export default ProductScreen

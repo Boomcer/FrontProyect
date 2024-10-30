@@ -30,6 +30,11 @@ const MenuApp = () => {
           </NavLink>
         </li>
         <li className="nav-item">
+          <NavLink to="/product" className="nav-link">
+            Producto
+          </NavLink>
+        </li>
+        <li className="nav-item">
           <NavLink to="/nosotros" className="nav-link">
             Nosotros
           </NavLink>
