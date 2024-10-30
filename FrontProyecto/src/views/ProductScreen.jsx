@@ -3,6 +3,7 @@ import imgDefault from '../assets/imgDefault.jpg'
 import { getProduct } from '../helpers/ApiFetch';
 import ProductApp from '../components/ProductApp';
 import { useParams } from 'react-router-dom';
+import '../css/general.css'
 
 const ProductScreen = () => {
 
@@ -22,7 +23,7 @@ const ProductScreen = () => {
   }
 
   return (
-    <div className='vw-100'>
+    <div className='screen'>
       {loading &&(
         <div className='row mt-5'>
           <div className='col'>
