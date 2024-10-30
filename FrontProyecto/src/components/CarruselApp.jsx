@@ -13,7 +13,7 @@ const CarruselApp = () => {
                 <div key={index} className={`carousel-item ${index === 0 ? 'active': ""}`}
                 data-bs-interval="10000"
                 style={{minHeight: '300px'}}>
-                    <div className="row d-flex alig-items-center  justify-content-center">
+                    <div className="row alig-items-center  justify-content-center">
                         <section className='col-5 d-flex align-self-center'
                         style={{justifyContent: 'center'}}>
                             <img src={destacado.url}
