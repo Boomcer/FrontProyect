@@ -8,7 +8,7 @@ const GridProductsApp = () => {
     <div className='container'>
         <div className='row justify-content-center'>
             {productos.map((producto, index) =>(
-            <div key={index} className='col-6 col-md-4 col-lg-2'>
+            <div key={index} className='col-6 col-md-4 col-lg-2' style={{maxWidth: 'auto', overflow: 'hidden'}}>
                 <div className="card" style={{width: '18rem'}}>
                     <img src={imgDefault} className="card-img-top" alt="imagen"/>
                     <div className="card-body">
