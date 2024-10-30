@@ -15,11 +15,11 @@
     return (
       <div>
         <div className='align-items-center justify-content-center'>
-        <p className='mt-2 ms-5'>
+        <p className='mt-2 ms-5 title'>
           {producto.title}
         </p>
         <section className=' center-content'>
-          <section className='col-12 col-md-7 img-container'>
+          <section className='col-12 col-md-7 img-container p-0'>
             <div className=' center-content img-border p-5'>
               <img src={producto.image}
               alt="imagen"
@@ -37,8 +37,8 @@
           </section>
 
           <section className='col-12 col-md-5 text-center align-self-center'>
-            <h4 className='mb-3'>$ {producto.price}</h4>
-              <div className='row mx-3 gap-3 mb-3 center-content'>
+            <h4 className='mb-3 text-center'>$ {producto.price}</h4>
+              <div className='row mx-3 gap-3 mb-3 btn-container'>
                 <Link className='p-0 btn-compra'>
                 <button className='btn btn-primary w-100'>Comprar ahora</button>
                 </Link>

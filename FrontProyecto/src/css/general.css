@@ -9,11 +9,6 @@ h2, p{
     padding: 0;
     max-width: 100%;
 }
-.center-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .btn-favorito{
     border: none;
@@ -32,8 +27,16 @@ h2, p{
 }
 
 @media (max-width: 768px) {
+    .title{
+        text-align: center;
+    }
     p{
         font-size: 16px;
+    }
+
+    .btn-container{
+        display: flex;
+        justify-content: center;
     }
 
     .btn-compra{
@@ -44,6 +47,9 @@ h2, p{
         min-height: 200px;
         min-width: 150px;
         position: relative;
+        display: flex;
+        justify-content: center;
+
     }
 
     .img-border{
@@ -61,6 +67,12 @@ h2, p{
     p{
         font-size: 20px;
     }
+    .center-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .img-container{
         justify-content: center;
         min-height: 450px;
@@ -71,6 +83,10 @@ h2, p{
 
     .img-movil{
         max-width: 250px;
+    }
+
+    .btn-container{
+        justify-content: center;
     }
 
     .btn-compra{
