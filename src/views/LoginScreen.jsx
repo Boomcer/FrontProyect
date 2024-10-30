@@ -73,7 +73,7 @@ const LoginScreen = () => {
                 <div className="d-grid my-3">
                   <button className="btn btn-warning">Iniciar</button>
                 </div>
-
+                
             </form>
             </div>
             {message && (
